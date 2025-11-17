@@ -1,61 +1,104 @@
+/* ===== GLOBAL ===== */
 body {
-    background: #ffeef5;
     font-family: "Poppins", sans-serif;
+    background: #ffe6f2; /* soft pink */
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #444;
 }
 
-.simple-nav {
-    background: #ffc7db;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    font-size: 17px;
+h1, h2, h3 {
+    color: #ff80a8;
+    margin-top: 20px;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    width: 100%;
+    padding: 15px 0;
+    background: white;
+    color: #ff80a8;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 2px solid #ffb6d1;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav a {
+    margin: 0 12px;
+    color: #ff80a8;
+    text-decoration: none;
     font-weight: 600;
 }
 
-.simple-nav a {
-    color: #b4004e;
-    text-decoration: none;
+nav a:hover {
+    color: #ff4d88;
 }
 
-.simple-nav .active {
-    text-decoration: underline;
+/* ===== HEART GRID (143 PAGE) ===== */
+
+.heart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    width: 90%;
+    margin: 20px auto;
 }
 
-.title {
-    margin-top: 25px;
-    font-size: 28px;
-    color: #b4004e;
-}
-
-.subtitle {
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-/* Heart Buttons */
-.reason-heart {
-    width: 120px;
-    padding: 12px;
-    margin: 8px;
-    border-radius: 12px;
+.heart {
     background: white;
-    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(255, 135, 168, 0.3);
     cursor: pointer;
-    border: 2px solid #ff9ebc;
-    transition: 0.2s;
+    transition: 0.3s;
+    border: 2px solid #ffb6d1;
 }
 
-.reason-heart:hover {
-    background: #ffd3e5;
+.heart:hover {
+    transform: scale(1.05);
+    background: #ffedf5;
 }
 
-.reason-text {
-    display: none;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #800038;
+.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ===== OPEN-WHEN ===== */
+
+.open-card {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #ffb6d1;
+    box-shadow: 0 4px 10px rgba(255, 135, 168, 0.25);
+}
+
+.open-card h2 {
+    color: #ff4d88;
+}
+
+/* ===== POLAROID ===== */
+
+.polaroid-frame {
+    width: 300px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 5px 12px rgba(255, 135, 168, 0.35);
+}
+
+.polaroid-frame img {
+    width: 100%;
+    border-radius: 8px;
 }
