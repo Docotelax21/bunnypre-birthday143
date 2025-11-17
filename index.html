@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aqeelah 143</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqeelah 143</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+<div class="page-wrapper fade-in">
 
-    <div class="container">
-        <h1 class="title">Happy Pre-Birthday, My Bunny ♡</h1>
+    <header class="top-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="143.html">143</a>
+        <a href="openwhen.html">Open When</a>
+        <a href="polaroid.html">Polaroids</a>
+    </header>
 
-        <div class="polaroid">
-            <img id="polaroid-photo" src="photo1.jpg" alt="Aqeelah and Isa">
-            <div class="caption">Aqeelah & Isa ♡</div>
-        </div>
+    <h1 class="page-title">Hi my bunny 🩷</h1>
+    <p class="subtitle">This is your pre-birthday surprise website.</p>
 
-        <p class="tap-text">tap the photo ♡</p>
+    <div class="center-content">
+        <a href="143.html" class="main-btn">143 Reasons</a>
+        <a href="openwhen.html" class="main-btn">Open When...</a>
+        <a href="polaroid.html" class="main-btn">Polaroid Wall</a>
     </div>
 
-    <script>
-        let currentPhoto = 1;
+</div>
 
-        function changePhoto() {
-            const img = document.getElementById("polaroid-photo");
-            currentPhoto = currentPhoto === 1 ? 2 : 1;
-            img.src = currentPhoto === 1 ? "photo1.jpg" : "photo2.jpg";
-        }
-
-        document.getElementById("polaroid-photo").addEventListener("click", changePhoto);
-    </script>
-
+<script src="script.js"></script>
 </body>
 </html>
