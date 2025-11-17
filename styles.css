@@ -1,54 +1,61 @@
-/* General layout */
 body {
-    background: #fff5fa;
-    margin: 0;
+    background: #ffeef5;
     font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-.container {
-    margin-top: 40px;
-}
-
-/* Title */
-.title {
-    color: #ff80b3;
-    font-size: 26px;
-    margin-bottom: 25px;
+.simple-nav {
+    background: #ffc7db;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 17px;
     font-weight: 600;
 }
 
-/* Polaroid style */
-.polaroid {
-    width: 260px;
-    padding: 15px;
-    background: #ffe6f2;
+.simple-nav a {
+    color: #b4004e;
+    text-decoration: none;
+}
+
+.simple-nav .active {
+    text-decoration: underline;
+}
+
+.title {
+    margin-top: 25px;
+    font-size: 28px;
+    color: #b4004e;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Heart Buttons */
+.reason-heart {
+    width: 120px;
+    padding: 12px;
+    margin: 8px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-}
-
-.polaroid:hover {
-    transform: rotate(-1deg) scale(1.03);
-}
-
-.polaroid img {
-    width: 100%;
-    border-radius: 8px;
+    background: white;
+    display: inline-block;
     cursor: pointer;
+    border: 2px solid #ff9ebc;
+    transition: 0.2s;
 }
 
-.caption {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #ff80b3;
-    font-weight: 500;
+.reason-heart:hover {
+    background: #ffd3e5;
 }
 
-/* Tap text */
-.tap-text {
-    margin-top: 18px;
+.reason-text {
+    display: none;
+    margin-top: 8px;
     font-size: 14px;
-    color: #ff99c8;
+    color: #800038;
 }
