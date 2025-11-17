@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>143 Reasons I Love You</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>143 Reasons</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav>
+<nav class="navbar">
     <a href="index.html">Home</a>
-    <a href="143.html">143</a>
+    <a href="143.html" class="active">143</a>
     <a href="openwhen.html">Open-When</a>
     <a href="polaroid.html">Polaroids</a>
 </nav>
 
-<h1>143 Reasons I Love You, Aqeelah</h1>
-<p>Tap a heart to reveal a reason.</p>
+<div class="container">
+    <h1>143 Reasons I Love You, Aqeelah</h1>
+    <p class="sub">Tap a heart to reveal a reason.</p>
 
-<button onclick="revealRandom()">Reveal Random</button>
-<button onclick="resetHearts()">Reset</button>
-
-<div class="heart-grid">
-
-    <!-- Example (you keep all your 143 entries here) -->
-    <div class="heart">
-        <div class="text hidden">1. I love the way your smile starts my day.</div>
+    <div class="buttons">
+        <button onclick="revealRandom()">Reveal Random ❤️</button>
+        <button onclick="resetReason()">Reset</button>
     </div>
 
-    <!-- leave ALL existing 143 items, just wrap each like above -->
+    <p id="reasonBox" class="reason-output"></p>
 </div>
 
 <script src="script.js"></script>
