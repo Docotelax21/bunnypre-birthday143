@@ -1,5 +1,7 @@
-
+// script.js — one shared script (soft-pink theme, Aqeelah)
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ---------- 143 messages ----------
   const MESSAGES = [
 "1. I love the way your smile starts my day.",
 "2. Your laugh is my favourite song.",
@@ -145,6 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
 "142. Your hands in mine — forever feels right.",
 "143. I love you — in all small ways, every day."
   ];
+
+  // ---------- OPEN WHEN ----------
   const OPEN_WHEN = {
     sad: "If you're sad, breathe. I wish I could sit with you and press pause on the world. Remember our Shell garage laugh. I'm a call away.",
     lonely: "When you're lonely, hold your phone close: I'm with you in every quiet moment. Our future mornings are coming.",
@@ -154,18 +158,24 @@ document.addEventListener('DOMContentLoaded', () => {
     stressed: "When you're stressed, make a small list: one I can help with, one you can let go, one thing to laugh about. I'm here.",
     smile: "Need a smile? Remember the tiny gum peck — cutest test. You can turn a day around with one silly face."
   };
+
+  // BUILD hearts grid if present
   const heartsGrid = document.getElementById('heartsGrid');
   if (heartsGrid) {
     heartsGrid.innerHTML = '';
-    MESSAGES.forEach((text, idx) => {
+    MESSAGES.forEach((m, i) => {
       const btn = document.createElement('button');
-      btn.type = 'button';
       btn.className = 'heart';
-      btn.setAttribute('data-i', idx);
-      btn.innerHTML = `<div class="inner"><div class="icon">❤</div><div class="msg">${text}</div></div>`;
-      btn.addEventListener('click', () => btn.classList.toggle('revealed'));
+      btn.type = 'button';
+      btn.setAttribute('data-i', i);
+      btn.innerHTML = `<div class="inner"><div class="icon">❤</div><div class="msg">${m}</div></div>`;
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('revealed');
+      });
       heartsGrid.appendChild(btn);
     });
+
+    // revealRandom
     const revealRandom = document.getElementById('revealRandom');
     if (revealRandom) revealRandom.addEventListener('click', () => {
       const unrevealed = Array.from(document.querySelectorAll('.heart')).filter(h=>!h.classList.contains('revealed'));
@@ -174,20 +184,34 @@ document.addEventListener('DOMContentLoaded', () => {
       pick.classList.add('revealed');
       pick.scrollIntoView({behavior:'smooth', block:'center'});
     });
+
+    // reset
     const resetBtn = document.getElementById('resetHearts');
-    if (resetBtn) resetBtn.addEventListener('click', () => {
+    if (resetBtn) resetBtn.addEventListener('click', ()=> {
       document.querySelectorAll('.heart').forEach(h=>h.classList.remove('revealed'));
     });
   }
+
+  // OPEN-WHEN handling
   const openDisplay = document.getElementById('openDisplay');
   if (openDisplay) {
-    document.querySelectorAll('.open-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const key = btn.getAttribute('data-key');
+    document.querySelectorAll('.open-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        const key = b.getAttribute('data-key');
         openDisplay.textContent = OPEN_WHEN[key] || '';
+        // small visual pulse
         openDisplay.style.opacity = '0';
-        setTimeout(()=>openDisplay.style.opacity='1',40);
+        setTimeout(()=> openDisplay.style.opacity = '1', 40);
       });
     });
   }
-});
+
+  // Accessibility: escape to clear
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.heart.revealed').forEach(h => h.classList.remove('revealed'));
+      if (openDisplay) openDisplay.textContent = '';
+    }
+  });
+
+}); // DOMContentLoaded end
