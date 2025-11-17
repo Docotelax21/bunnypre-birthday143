@@ -1,37 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aqeelah — Open When</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open When • Aqeelah</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="topbar">
-    <a class="navlink" href="index.html">Home</a>
-    <a class="navlink" href="143.html">143</a>
-    <a class="navlink active" href="openwhen.html">Open-When</a>
-  </header>
+<div class="page-wrapper fade-in">
 
-  <main class="container">
-    <h1 class="page-title">Open-When Letters — Aqeelah</h1>
-    <p class="hint">Tap a button below to reveal a short letter — perfect for when you need a little pick-me-up.</p>
+<header class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="143.html">143</a>
+    <a href="openwhen.html" class="active">Open When</a>
+    <a href="polaroid.html">Polaroids</a>
+</header>
 
-    <div class="open-buttons">
-      <button class="open-btn" data-key="sad">Open when you're sad</button>
-      <button class="open-btn" data-key="lonely">Open when you're lonely</button>
-      <button class="open-btn" data-key="miss">Open when you miss me</button>
-      <button class="open-btn" data-key="doubt">Open when you doubt yourself</button>
-      <button class="open-btn" data-key="sleep">Open when you can't sleep</button>
-      <button class="open-btn" data-key="stressed">Open when you're stressed</button>
-      <button class="open-btn" data-key="smile">Open when you need a smile</button>
+<h1 class="page-title">Open When… 💌</h1>
+
+<div class="openwhen-container">
+
+    <button onclick="openLetter('sad')" class="openwhen-card">Open when you're sad</button>
+    <button onclick="openLetter('lonely')" class="openwhen-card">Open when you feel lonely</button>
+    <button onclick="openLetter('miss')" class="openwhen-card">Open when you miss me</button>
+    <button onclick="openLetter('doubt')" class="openwhen-card">Open when you doubt yourself</button>
+    <button onclick="openLetter('sleep')" class="openwhen-card">Open when you can’t sleep</button>
+    <button onclick="openLetter('stress')" class="openwhen-card">Open when you're stressed</button>
+    <button onclick="openLetter('smile')" class="openwhen-card">Open when you need a smile</button>
+
+</div>
+
+<div id="letter-modal" class="letter-modal">
+    <div class="letter-content">
+        <span class="close-btn" onclick="closeLetter()">×</span>
+        <p id="letter-text"></p>
     </div>
+</div>
 
-    <div id="openDisplay" class="open-display" aria-live="polite"></div>
-
-    <div class="footer">Always — A</div>
-  </main>
-
-  <script src="script.js?v=4"></script>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
