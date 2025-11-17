@@ -1,48 +1,24 @@
-// ---- 143 Reasons ----
-const reasons = [
-    "I love the way your smile starts my day.",
-    "Your laugh is my favourite song.",
-    "Your hugs—they fit perfectly in mine.",
-    "How you make tea on rainy days.",
-    "Your stubbornness when you're right.",
-    "Your little notes you hide for me.",
-    "How you make food taste like home.",
-    "You dancing in the kitchen at midnight.",
-    "The way you look when you’re concentrating.",
-    "Your texts that turn my bad days around.",
-    "How you call me when you're excited.",
-    "Your eyes while reading.",
-    "Your voice saying my name.",
-    "Your little shy moments.",
-    "How you teach me new things.",
-    "Your cute giggles at sunsets.",
-    "Your smell on your hoodie.",
-    "The way you remember small details.",
-    "Your courage to try new things.",
-    "Your soft honesty.",
-    "Your silly jokes.",
-    "Your doodles.",
-    "Your appetite for adventure.",
-    "Your gentleness.",
-    "Your patience even when you’re upset."
-];
+// ========== HEART REVEAL (143 PAGE) ==========
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("heart")) {
+        const content = e.target.querySelector(".text");
 
-// --------- Render hearts ----------
-window.onload = () => {
-    const container = document.getElementById("reasons-container");
-    if (!container) return;
+        if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+        } else {
+            content.classList.add("hidden");
+        }
+    }
+});
 
-    reasons.forEach((reason, index) => {
-        const div = document.createElement("div");
-        div.className = "reason-heart";
-        div.innerHTML = `
-            <strong>❤️ ${index + 1}</strong>
-            <p class="reason-text">${reason}</p>
-        `;
-        div.onclick = () => {
-            const text = div.querySelector(".reason-text");
-            text.style.display = text.style.display === "block" ? "none" : "block";
-        };
-        container.appendChild(div);
-    });
-};
+// RANDOM REVEAL BUTTON
+function revealRandom() {
+    const hearts = document.querySelectorAll(".text");
+    hearts.forEach(h => h.classList.add("hidden"));
+    const random = hearts[Math.floor(Math.random() * hearts.length)];
+    random.classList.remove("hidden");
+}
+
+function resetHearts() {
+    document.querySelectorAll(".text").forEach(h => h.classList.add("hidden"));
+}
