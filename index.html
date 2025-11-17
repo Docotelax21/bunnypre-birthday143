@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aqeelah 143</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>143 | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Top Center Navigation -->
+  <nav class="top-center-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+  </nav>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="143.html">143</a>
-    <a href="openwhen.html">Open-When</a>
-    <a href="polaroid.html">Polaroids</a>
-</nav>
+  <!-- Hamburger Menu Button -->
+  <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
 
-<h1>Hi My Bunny 🤍</h1>
-<p>Welcome to your special pre-birthday surprise.</p>
-<p>Everything here is made with love, just for you.</p>
+  <!-- Dropdown Menu -->
+  <div id="menu" class="menu">
+      <a href="index.html">Home</a>
+      <a href="143.html">143 Message</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+  </div>
 
+  <!-- Main Content -->
+  <header class="header-section">
+      <h1 class="main-title">Welcome My Love</h1>
+      <p class="subtitle">A soft pink space made just for you.</p>
+      <a href="143.html" class="main-btn">Read Your 143</a>
+  </header>
+
+  <script src="menu.js"></script>
 </body>
 </html>
