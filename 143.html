@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>143 Reasons</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>143 Reasons</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<nav class="navbar">
+<!-- NAVIGATION -->
+<nav>
     <a href="index.html">Home</a>
-    <a href="143.html" class="active">143</a>
+    <a class="active" href="143.html">143</a>
     <a href="openwhen.html">Open-When</a>
     <a href="polaroid.html">Polaroids</a>
 </nav>
 
-<div class="container">
-    <h1>143 Reasons I Love You, Aqeelah</h1>
-    <p class="sub">Tap a heart to reveal a reason.</p>
+<h1>143 Reasons I Love You, Aqeelah</h1>
 
-    <div class="buttons">
-        <button onclick="revealRandom()">Reveal Random ❤️</button>
-        <button onclick="resetReason()">Reset</button>
-    </div>
-
-    <p id="reasonBox" class="reason-output"></p>
+<div class="center">
+    <button id="randomBtn" class="btn">Reveal Random 💗</button>
+    <button id="resetBtn" class="btn">Reset</button>
 </div>
+
+<p id="reasonBox" class="reason-box"></p>
 
 <script src="script.js"></script>
 </body>
