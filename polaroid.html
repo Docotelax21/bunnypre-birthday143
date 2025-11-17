@@ -1,1 +1,35 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Polaroids — Aqeelah</title><link rel="stylesheet" href="styles.css"></head><body><header class="topbar"><a class="navlink" href="index.html">Home</a></header><main class="container"><h1 class="page-title">Polaroid Wall</h1><p class="hint">Click a photo to see a note.</p><div class="polaroid-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px"><div class="polaroid" data-note="You make every day brighter."><img src="assets/photo1.jpg" style="width:100%;height:140px;object-fit:cover;border-radius:8px"></div><div class="polaroid" data-note="I love how you laugh."><img src="assets/photo2.jpg" style="width:100%;height:140px;object-fit:cover;border-radius:8px"></div></div><script>document.querySelectorAll('.polaroid').forEach(p=>p.addEventListener('click',()=>{const t=document.createElement('div');t.style.position='fixed';t.style.left='50%';t.style.top='18%';t.style.transform='translateX(-50%)';t.style.background='#fff';t.style.color='#333';t.style.padding='10px 14px';t.style.borderRadius='8px';t.textContent=p.getAttribute('data-note');document.body.appendChild(t);setTimeout(()=>t.remove(),1800);}));</script><div class="footer">♥</div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaroids • Aqeelah</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="page-wrapper fade-in">
+
+<header class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="143.html">143</a>
+    <a href="openwhen.html">Open When</a>
+    <a href="polaroid.html" class="active">Polaroids</a>
+</header>
+
+<h1 class="page-title">Our Polaroids 📸</h1>
+
+<div class="polaroid-gallery">
+    <div class="polaroid-frame">
+        <img src="assets/p1.jpeg" alt="Aqeelah 1">
+    </div>
+
+    <div class="polaroid-frame">
+        <img src="assets/p2.jpeg" alt="Aqeelah 2">
+    </div>
+</div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
